@@ -1,12 +1,14 @@
 import express from 'express';
-import { productController } from './ProductController';
+import { productControllers } from './ProductController';
 import validateRequests from '../../middlewares/validateRequest';
 import { productValidation } from './product.validation';
 const router = express.Router();
 
 router.post(
-  '/create-product',
+  '/add-product',
   validateRequests(productValidation.productZodSchema),
-  productController.createProduct,
+  productControllers.addProduct,
 );
+router.get('/:id', productControllers.getSingleProduct);
+router.get('/', productControllers.getProducts);
 export const productRoutes = router;

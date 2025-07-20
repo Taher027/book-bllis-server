@@ -13,4 +13,4 @@ const productSchema = new Schema<IProduct>({
   longDescription: { type: String },
 });
 
-export const Produc = model<IProduct>('Product', productSchema);
+export const Products = model<IProduct>('Products', productSchema);
