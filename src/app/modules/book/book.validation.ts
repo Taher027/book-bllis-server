@@ -1,7 +1,6 @@
-// productValidation.ts
 import { z } from 'zod';
 
-const productZodSchema = z.object({
+const bookZodSchema = z.object({
   body: z.object({
     title: z.string({
       required_error: 'Title is required',
@@ -29,6 +28,6 @@ const productZodSchema = z.object({
   }),
 });
 
-export const productValidation = {
-  productZodSchema,
+export const bookValidation = {
+  bookZodSchema,
 };

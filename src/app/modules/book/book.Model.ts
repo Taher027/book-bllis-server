@@ -1,7 +1,7 @@
 import { model, Schema } from 'mongoose';
-import { IProduct } from './productInterface';
+import { IBook } from './book.Interface';
 
-const productSchema = new Schema<IProduct>({
+const bookSchema = new Schema<IBook>({
   title: { type: String, required: true },
   author: { type: String, required: true },
   genre: { type: String, required: true },
@@ -13,4 +13,4 @@ const productSchema = new Schema<IProduct>({
   longDescription: { type: String },
 });
 
-export const Products = model<IProduct>('Products', productSchema);
+export const Books = model<IBook>('Books', bookSchema);
